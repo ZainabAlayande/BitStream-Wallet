@@ -8,4 +8,10 @@ import lombok.*;
 @Getter
 @Setter
 public class SendBitcoinRequest {
+
+    private String receiverAddress;
+
+    private String description;
+
+    private String amount;
 }

@@ -2,21 +2,20 @@ package com.example.bitstreamwallet.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-
-import java.time.LocalDateTime;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.stereotype.Repository;
 
 @Entity
-public class Wallet {
+@Builder
+@Getter
+@Setter
+@AllArgsConstructor
+@Repository
+public class Transaction {
 
-    private String name;
-
-    private WalletType walletType;
-
-    private String seed;
-
-    private String password;
-
-    private LocalDateTime createdAt;
     @Id
     private Long id;
 
