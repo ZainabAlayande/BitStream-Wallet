@@ -1,10 +1,10 @@
-package com.example.bitstreamwallet.requests;
+package com.example.bitstreamwallet.dtos.requests;
 
 import lombok.*;
 
-@Builder
-@AllArgsConstructor
-@RequiredArgsConstructor
+//@Builder
+//@AllArgsConstructor
+//@RequiredArgsConstructor
 @Getter
 @Setter
 public class SendBitcoinRequest {

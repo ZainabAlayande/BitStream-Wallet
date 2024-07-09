@@ -1,11 +1,10 @@
 package com.example.bitstreamwallet.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+
 
 import java.time.LocalDateTime;
 
-@Entity
+
 public class Wallet {
 
     private String name;
@@ -17,7 +16,7 @@ public class Wallet {
     private String password;
 
     private LocalDateTime createdAt;
-    @Id
+
     private Long id;
 
     public void setId(Long id) {

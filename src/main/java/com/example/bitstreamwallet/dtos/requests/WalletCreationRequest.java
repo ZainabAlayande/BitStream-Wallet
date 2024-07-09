@@ -1,4 +1,4 @@
-package com.example.bitstreamwallet.requests;
+package com.example.bitstreamwallet.dtos.requests;
 
 import com.example.bitstreamwallet.models.WalletType;
 import lombok.*;
@@ -7,9 +7,9 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@RequiredArgsConstructor
-@Builder
+//@AllArgsConstructor
+//@RequiredArgsConstructor
+//@Builder
 public class WalletCreationRequest {
 
     private String name;
