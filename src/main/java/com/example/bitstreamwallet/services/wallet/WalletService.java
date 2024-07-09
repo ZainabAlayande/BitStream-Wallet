@@ -1,4 +1,4 @@
-package com.example.bitstreamwallet.wallet;
+package com.example.bitstreamwallet.services.wallet;
 
 import com.example.bitstreamwallet.models.Transaction;
 import com.example.bitstreamwallet.dtos.requests.ReceiveBitcoinRequest;
