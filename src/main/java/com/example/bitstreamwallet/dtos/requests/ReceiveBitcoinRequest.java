@@ -2,10 +2,15 @@ package com.example.bitstreamwallet.dtos.requests;
 
 import lombok.*;
 
-//@Builder
+@Builder
 @Getter
 @Setter
-//@AllArgsConstructor
-//@RequiredArgsConstructor
+@AllArgsConstructor
+@RequiredArgsConstructor
 public class ReceiveBitcoinRequest {
+
+    private String amount;
+    private String description;
+    private String expirationTime;
+
 }

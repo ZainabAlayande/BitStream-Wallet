@@ -2,11 +2,12 @@ package com.example.bitstreamwallet.dtos.responses;
 
 import lombok.*;
 
-//@Builder
+@Builder
 @Getter
 @Setter
-//@AllArgsConstructor
-//@RequiredArgsConstructor
+@ToString
+@AllArgsConstructor
+@RequiredArgsConstructor
 public class WalletCreationResponse {
 
     private String walletId;

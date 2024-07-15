@@ -2,11 +2,13 @@ package com.example.bitstreamwallet.dtos.responses;
 
 import lombok.*;
 
-//@Builder
+@Builder
 @Getter
 @Setter
-//@AllArgsConstructor
-//@RequiredArgsConstructor
+@AllArgsConstructor
+@RequiredArgsConstructor
 public class ReceiveBitcoinResponse {
+
+    private String uri;
 
 }
