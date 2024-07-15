@@ -7,6 +7,7 @@ import com.example.bitstreamwallet.dtos.responses.WalletCreationResponse;
 import com.example.bitstreamwallet.models.WalletType;
 import com.example.bitstreamwallet.services.wallet.WalletService;
 import com.example.bitstreamwallet.services.wallet.WalletServiceImpl;
+import org.bitcoinj.crypto.HDKeyDerivation;
 import org.bitcoinj.crypto.MnemonicException;
 import org.bitcoinj.store.BlockStoreException;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,6 +15,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -77,9 +79,10 @@ public class WalletServiceTest {
 
 
     @Test
-    @DisplayName("Test user can received btc")
+    @DisplayName("Test user can generate bedch32 address")
     public void testWalletCanGenerateBech32Address() throws IOException, MnemonicException.MnemonicLengthException {
         walletService.generateBech32Address();
+
     }
 
 }

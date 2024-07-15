@@ -9,8 +9,7 @@ import com.example.bitstreamwallet.dtos.responses.WalletCreationResponse;
 import com.example.bitstreamwallet.models.Transaction;
 import com.example.bitstreamwallet.repository.WalletRepository;
 import org.bitcoinj.core.*;
-import org.bitcoinj.crypto.MnemonicCode;
-import org.bitcoinj.crypto.MnemonicException;
+import org.bitcoinj.crypto.*;
 import org.bitcoinj.params.TestNet3Params;
 import org.bitcoinj.script.Script;
 import org.bitcoinj.store.BlockStoreException;
@@ -19,6 +18,7 @@ import org.bitcoinj.wallet.DeterministicSeed;
 import org.bitcoinj.wallet.Wallet;
 
 import java.io.IOException;
+import java.security.PublicKey;
 import java.security.SecureRandom;
 import java.util.Arrays;
 import java.util.List;
@@ -97,6 +97,15 @@ public class WalletServiceImpl implements WalletService {
 
         byte[] seed = MnemonicCode.toSeed(mnemonicMnemonic, "zen");
         System.out.println("Mnemonic + Passphrase = " + Arrays.toString(seed));
+        System.out.println(HDKeyDerivation.createMasterPrivateKey(seed));
+        DeterministicKey masterPrivateKey = HDKeyDerivation.createMasterPrivateKey(seed);
+
+        // Optionally, derive the first account's extended private key
+        DeterministicHierarchy hierarchy = new DeterministicHierarchy(masterPrivateKey);
+        System.out.println(hierarchy);
+        List<ChildNumber> accountPath = HDPath.M();
+        DeterministicKey accountKey = hierarchy.deriveChild(accountPath, false, true, new ChildNumber(0, true));
+
 
 
         return null;
