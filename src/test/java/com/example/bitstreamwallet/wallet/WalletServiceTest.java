@@ -15,6 +15,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -79,9 +80,10 @@ public class WalletServiceTest {
 
 
     @Test
-    @DisplayName("Test user can generate bedch32 address")
-    public void testWalletCanGenerateBech32Address() throws IOException, MnemonicException.MnemonicLengthException {
-        walletService.generateBech32Address();
+    @DisplayName("Test user can generate bech32 address")
+    public void testWalletCanGenerateBech32Address() throws Exception {
+        var response = walletService.generateBech32Address();
+        System.out.println(response);
 
     }
 

@@ -11,6 +11,7 @@ import org.bitcoinj.crypto.MnemonicException;
 import org.bitcoinj.store.BlockStoreException;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 public interface WalletService {
@@ -23,6 +24,6 @@ public interface WalletService {
 
     List<Transaction> walletHistory();
 
-    String generateBech32Address() throws MnemonicException.MnemonicLengthException, IOException;
+    String generateBech32Address() throws Exception;
 
 }
