@@ -43,22 +43,20 @@ public class Utils {
         return Bech32.encode("bc", ripemd160Hash);
     }
 
-//    public static String getBech32Address(String publicKey) throws NoSuchAlgorithmException {
-//        MessageDigest digest = MessageDigest.getInstance("SHA-256");
-//        byte[] sha256Hash = digest.digest(publicKey.getBytes(StandardCharsets.UTF_8));
-//
-//        // Hash the result with RIPEMD-160
-////        MessageDigest ripemd160Digest = MessageDigest.getInstance("RIPEMD160");
-////        byte[] ripemd160Hash = ripemd160Digest.digest(sha256Hash);
-//
-//        // Hash the result with RIPEMD-160 using Bouncy Castle
-//        RIPEMD160Digest ripemd160Digest = new RIPEMD160Digest();
-//        ripemd160Digest.update(sha256Hash, 0, sha256Hash.length);
-//        byte[] ripemd160Hash = new byte[ripemd160Digest.getDigestSize()];
-//        ripemd160Digest.doFinal(ripemd160Hash, 0);
-//
-//        // Encode the hash using Bech32
-//        return Bech32.encode(Bech32.Encoding.BECH32, "bc", ripemd160Hash);
-////        return Bech32.encode("bc", ripemd160Hash);
-//    }
+
+    public static boolean isValidBech32Address(String address) {
+        try {
+            Bech32.Bech32Data bech32Data = Bech32.decode(address);
+
+            if (!bech32Data.hrp.equals("bc")) {
+                return false;
+            } else {
+                return true;
+            }
+        } catch (Exception exception) {
+            return false;
+        }
+    }
+
+
 }

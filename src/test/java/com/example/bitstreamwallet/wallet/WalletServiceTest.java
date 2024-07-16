@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
+import static com.example.bitstreamwallet.services.wallet.Utils.isValidBech32Address;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class WalletServiceTest {
@@ -78,6 +79,13 @@ public class WalletServiceTest {
 //        assertNotNull(response.getUri());
     }
 
+
+    @Test
+    @DisplayName("Test address is a valid bech32 address")
+    public void testAddressIsAValidBech32Address()  {
+        var response = isValidBech32Address("bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kygt080");
+        System.out.println(response);
+    }
 
     @Test
     @DisplayName("Test user can generate bech32 address")
