@@ -20,7 +20,7 @@ public interface WalletService {
 
     SendBitcoinResponse sendBTC(SendBitcoinRequest request);
 
-    ReceiveBitcoinResponse receiveBTC(ReceiveBitcoinRequest request) throws IOException, MnemonicException.MnemonicLengthException;
+    ReceiveBitcoinResponse receiveBTC(ReceiveBitcoinRequest request) throws Exception;
 
     List<Transaction> walletHistory();
 

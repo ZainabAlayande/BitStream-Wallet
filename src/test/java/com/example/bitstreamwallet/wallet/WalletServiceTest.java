@@ -70,7 +70,7 @@ public class WalletServiceTest {
 
     @Test
     @DisplayName("Test user can received btc")
-    public void testReceiveBTC() throws IOException, MnemonicException.MnemonicLengthException {
+    public void testReceiveBTC() throws Exception {
         ReceiveBitcoinRequest request = new ReceiveBitcoinRequest();
         request.setAmount("0.0089");
         request.setDescription("Sending to Enoch");
@@ -94,5 +94,6 @@ public class WalletServiceTest {
         System.out.println(response);
 
     }
+
 
 }
